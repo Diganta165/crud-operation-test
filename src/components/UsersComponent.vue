@@ -9,7 +9,7 @@
 
           </tr>
           <tr>
-              <user-component v-for="user in users" :key="user.id" :user = "user"/>
+              <user-component v-for="user in users" :key="user.id" :user = "user" @onDelete="onDelete"/>
           </tr>
       </table>
   </div>
@@ -25,6 +25,12 @@ UserComponent
 props: {
     users :{
         type:Array
+    }
+},
+methods:{
+    onDelete(id){
+        // console.log('deleting from users component', id)
+        this.$emit("onDelete", id)
     }
 }
 }

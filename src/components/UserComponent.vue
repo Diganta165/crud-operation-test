@@ -19,7 +19,8 @@ props:{
 },
 methods:{
     onDelete(){
-        console.log('Deleted', this.user.id)
+        // console.log('Deleted', this.user.id)
+        this.$emit("onDelete", this.user.id)
     }
 }
 }
